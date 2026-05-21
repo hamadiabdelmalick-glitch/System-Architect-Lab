@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+
+  # ---------------------------------------------------------
+  # Service 1 : Base de données MySQL
+  # ---------------------------------------------------------
+  database:
+    image: mysql:8.0
+    container_name: garage_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password_fst
+      MYSQL_DATABASE: garage
+      MYSQL_USER: mecanicien
+      MYSQL_PASSWORD: garage2026
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+
+  # ---------------------------------------------------------
+  # Service 2 : Laboratoire Bash (Debian)
+  # ---------------------------------------------------------
+  lab-bash:
+    image: debian:stable-slim
+    container_name: debian_lab
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./admin_systeme.sh:/root/admin_systeme.sh
+    working_dir: /root
+    command: bash
+
+  # ---------------------------------------------------------
+  # Service 3 : Serveur Web Apache
+  # ---------------------------------------------------------
+  web:
+    image: httpd:2.4
+    container_name: garage_web
+    ports:
+      - "8080:80"
+    volumes:
+      - ./web:/usr/local/apache2/htdocs/
+    depends_on:
+      - database
+
+volumes:
+  mysql_data:

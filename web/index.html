@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Garage LIU 2026 - System Architect Lab</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #1e2327; color: #e6e6e6;
+               margin: 0; padding: 40px; }
+        .container { max-width: 720px; margin: 0 auto;
+                     background: #2a2f35; padding: 32px; border-radius: 8px;
+                     box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+        h1 { color: #4A90E2; border-bottom: 2px solid #4A90E2; padding-bottom: 8px; }
+        h2 { color: #85DCB0; margin-top: 28px; }
+        .badge { display: inline-block; background: #4A90E2; color: white;
+                 padding: 4px 10px; border-radius: 4px; font-size: 12px; }
+        code { background: #1e2327; padding: 2px 6px; border-radius: 3px;
+               color: #E8A87C; }
+        ul { line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="badge">LIU 2026</span>
+        <h1>System Architect Lab - Garage</h1>
+        <p>Plateforme de gestion d'une flotte de véhicules, déployée via
+        <code>docker-compose</code> dans le cadre du mini-projet
+        <em>Linux, Ordonnancement et Conteneurisation</em>.</p>
+
+        <h2>Services actifs</h2>
+        <ul>
+            <li><strong>MySQL 8.0</strong> - port 3306 (base <code>garage</code>)</li>
+            <li><strong>Debian Lab</strong> - conteneur Bash interactif</li>
+            <li><strong>Apache HTTP</strong> - port 8080 (cette page)</li>
+        </ul>
+
+        <h2>Commandes utiles</h2>
+        <ul>
+            <li><code>docker-compose up -d</code> - démarrer la stack</li>
+            <li><code>docker exec -it debian_lab bash</code> - accès au lab</li>
+            <li><code>docker exec -it garage_mysql mysql -u root -p</code> - accès MySQL</li>
+            <li><code>docker-compose down</code> - arrêter proprement</li>
+        </ul>
+
+        <h2>Encadrant</h2>
+        <p>Dr. EL BENANY Mohamed Mahmoud - Introduction aux Systèmes d'Exploitation</p>
+    </div>
+</body>
+</html>

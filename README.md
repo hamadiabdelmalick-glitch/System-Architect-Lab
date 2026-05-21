@@ -134,8 +134,9 @@ docker-compose down
 
 | Étudiant | ID | Tâches principales |
 |---|---|---|
-| Hamady Abdel Malick | 12530133 | Scripting Bash + Simulation CPU |
-| Mohamed Vall Ebbou | 12530162 | Dockerisation + MySQL + Apache |
+| Hamady Abdel Malick | 12530133 | Scripting Bash (admin_systeme.sh) |
+| Mohamed Vall Ebbou | 12530162 | Simulation CPU (SRTF vs Round Robin) |
+| Salme Bounene | 12530122 | Dockerisation + MySQL + Apache |
 | Rédaction du rapport et vidéo | — | Travail collectif |
 
 ---
